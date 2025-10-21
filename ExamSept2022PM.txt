@@ -1,0 +1,226 @@
+
+
+    Intro to C# Exam 
+    Friday Sept 9th 2021
+    Take your time!!
+    Send files through Teams Chat!
+    Send the files before 5pm!
+
+
+    /////////////////////////////////////////////////////
+    // Part A: Provide a short definition for the 
+    // following terms (2 marks each) 
+    // ANSWER IN YOUR OWN WORDS 
+	 // do not a copy/paste a canned definition 😺
+    ///////////////////////////////////////////////////
+
+
+    1) Given the following code:
+
+        public async Task GetCast(string movieID) {
+            await Program.fetch.GetCast(movieID);
+            foreach(Cast cast in Program.credits.cast){
+                castNames.Add(cast.name);
+                castIDs.Add(cast.id.ToString());
+                castPics.Add(cast.profile_path);
+            }
+        } // GetCast()
+
+        What benefit(s) do async and await provide?
+
+        _____________________________________________
+
+        _____________________________________________
+
+        ________________________________.
+
+
+    2) Given the following code:
+
+        public async Task Search(string searchQuery) {
+            ClearHeaders();
+
+            // Does a movie search
+            HttpResponseMessage response = await client.GetAsync(
+                "https://api.themoviedb.org/3/search/movie?api_key=" + 
+                 API_KEY + "&query=" + searchQuery);
+
+            if(response.IsSuccessStatusCode) {
+                Data = await response.Content.ReadAsStringAsync();
+                Program.posterSet = JsonSerializer.Deserialize<PosterSet>(Data);
+            }
+            else {
+                Data = null;
+            }
+        } // Search()
+
+        Specifically the line: if(response.IsSuccessStatusCode)
+
+        What does this do for us?
+
+        _____________________________________________
+
+        _____________________________________________
+
+        _________________________________.
+
+
+    3) Given the following code:
+
+        <div id="search">
+            <form method="POST" asp-page-handler="Search">
+                <input id="searchBox" type="text" name="search" placeholder="movie search...">
+            </form>
+        </div>
+
+        What would the name of the method in the code behind file be and what 
+        would be the name of the parameter that method would be looking for?
+
+
+        _______________________________________________
+
+        __________________________________.
+	
+
+    4) Given the following code:
+
+            public static async Task Search(string search) {
+                ClearHeaders();
+
+                HttpResponseMessage response = await client.GetAsync(
+                    "https://api.themoviedb.org/3/search/movie?api_key=" + 
+                    API_KEY + "&page=1&query=" + search);
+
+                if(response.IsSuccessStatusCode) {
+                    Data = await response.Content.ReadAsStringAsync();
+                    posterSet = JsonSerializer.Deserialize<PosterSet>(Data);
+                }
+                else {
+                    Data = null;
+                }
+            } // Search()
+
+
+            What is the object name that we deserialize Data into?
+            Also, what would Data hold in the event response.IsSuccessStatusCode comes
+            back as false?
+
+
+
+            _____________________________________________.
+
+            _____________________________________________.
+
+
+    5) Given the following code:
+
+        <div class="movieCardInfo">
+            @if(Model.overviews[i].Length >= Model.maxOverviewChars) {
+                <h5>@Model.movieTitles[i]</h5>
+                <p class="movieCardOverview">@Model.overviews[i].Substring(0, Model.maxOverviewChars) ...</p>
+            }
+            else {
+                <h5>@Model.movieTitles[i]</h5>
+                <p class="movieCardOverview">@Model.overviews[i]</p>
+            }
+        </div>
+
+
+        Explain the purpose of the if else statement.
+
+
+
+        _______________________________________________
+
+        _______________________________________________
+
+        _______________________________________________
+
+        ___________________________.
+
+
+    
+    
+
+    /////////////////////////////////////////////////
+    // Part B: Code writing (20 marks)
+
+
+    30) Write a small application using VS Code:
+
+        1) Create a new folder named YourName_Exam
+
+        2) Open the folder in VS Code
+
+        3) Drop to a terminal
+
+        4) Run: dotnet new webapp
+
+
+        On the Index page, add 2 forms, and an h1 tag
+
+        Form 1: updates an h1 tag(on the same page)
+
+            add a textbox (type text)
+            add a submit button
+
+            When the form is submitted, it will call a method
+            in the Index.cshtml.cs file which will set a variable
+            that will set the text for the h1 tag.
+
+        Form 2: redircts to another page
+
+            add a textbox (type text)
+            add a submit button
+
+            When the form is submitted, it will call a method
+            in the Index.cshtml.cs that will redirect to another
+            page.
+
+            The method needs to take in the text the user typed 
+            in the form and using the URL the page it goes to will
+            read in that value.
+
+        On the Second page(call it what you want, and yes you will
+        need to create this page as well) add an h1 tag 
+
+            In the code behind file, specifically in the OnGet
+            method take in the value from the URL and update a 
+            variable that will ultimately update the h1 tag.
+
+
+            that's it... 😄
+
+            test it, once you are satisfied that it works.
+            Zip the YourName_Exam folder and send to me via 
+            Teams Chat 👍
+
+    
+    
+    //////////////////////////////////////////////////////////////
+    // Send me everything through Teams Chat!
+       Then have an amazing weekend! 🌞
+
+
+
+            ,%&& %&& %
+          ,%&%& %&%& %&
+         %& %&% &%&% % &%
+        % &%% %&% &% %&%&,
+        &%&% %&%& %& &%& %
+       %%& %&%& %&%&% %&%%&
+       &%&% %&% % %& &% %%&
+       && %&% %&%& %&% %&%'
+        '%&% %&% %&&%&%%'%
+         % %& %& %&% &%%
+           `\%%.'  /`%&'
+             |    |            /`-._           _\\/
+             |,   |_          /     `-._ ..--~`_
+             |;   |_`\_      /  ,\\.~`  `-._ -  ^
+             |;:  |/^}__..-,@   .~`    ~    `o ~
+             |;:  |(____.-'     '.   ~   -    `    ~
+             |;:  |  \ / `\       //.  -    ^   ~
+             |;:  |\ /' /\_\_        ~. _ ~   -   //-
+           \\/;:   \'--' `---`           `\\//-\\///
+
+        //////////// Gone Fishing //   
